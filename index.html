@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RedGoal FC</title>
+  <link rel="stylesheet" href="footer.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #0c0c0c, #1a1a1a);
+      color: #fff;
+    }
+
+    header {
+      background-color: #111;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    header h1 {
+      color: #e50914;
+      font-size: 2rem;
+    }
+
+    /* Welcome Banner */
+.welcome-banner {
+  background: #e50914;
+  color: #fff;
+  padding: 0.8rem 0; /* increased padding */
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 20;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  height: 40px; /* set fixed height */
+}
+
+.welcome-banner h2 {
+  position: absolute;
+  white-space: nowrap;
+  animation: moveLeft 25s linear infinite;
+  font-size: 1.1rem;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Keyframes */
+@keyframes moveLeft {
+  0% { left: 100%; }
+  100% { left: -100%; }
+}
+
+/* Header (Navbar) */
+header {
+  position: fixed;
+  top: 40px; /* exactly the height of the welcome banner */
+  left: 0;
+  width: 100%;
+  background-color: #1a1a1a;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 2rem;
+  z-index: 15;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+  height: 70px;
+}
+
+/* Logo */
+header h1 {
+  font-size: 1.8rem;
+  color: #e50914;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+}
+
+/* Navbar */
+nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav a {
+  color: #ddd;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav a:hover {
+  color: #e50914;
+  transform: scale(1.05);
+}
+
+/* Page Content Offset */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #121212;
+  color: #fff;
+  margin-top: 110px; /* 40 (banner) + 70 (header) */
+}
+    .hero {
+      position: relative;
+      height: 80vh;
+      overflow: hidden;
+    }
+
+    .carousel {
+      display: flex;
+      width: calc(100vw * 10);
+      height: 100%;
+      animation: slide 40s linear infinite;
+    }
+
+    .carousel img {
+      width: 100vw;
+      height: 100%;
+      object-fit: cover;
+      flex: 0 0 100vw;
+    }
+
+    @keyframes slide {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-500vw); }
+    }
+
+    .hero-text {
+      position: absolute;
+      top: 50%;
+      left: 10%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.6);
+      padding: 2rem;
+      border-radius: 10px;
+      text-shadow: 1px 1px 5px #000;
+    }
+
+    .hero-text h1 {
+      font-size: 2.5rem;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+
+    .hero-text p {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    #newsletter input, #newsletter button {
+      padding: 0.5rem;
+      border: none;
+      outline: none;
+    }
+
+    #newsletter input {
+      width: 200px;
+      border-radius: 4px 0 0 4px;
+    }
+
+    #newsletter button {
+      background-color: #e50914;
+      color: white;
+      border-radius: 0 4px 4px 0;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    #newsletter button:hover {
+      background-color: #ff2d2d;
+    }
+
+    .section-title {
+      text-align: center;
+      margin: 3rem 0 1rem;
+      font-size: 2rem;
+      color: #e50914;
+    }
+
+    .stars {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .star-player {
+      background: #1a1a1a;
+      border-radius: 10px;
+      padding: 1rem;
+      text-align: center;
+      width: 200px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.1);
+      transition: transform 0.3s;
+    }
+
+    .star-player:hover {
+      transform: translateY(-10px);
+    }
+
+    .star-player img {
+      width: 100%;
+      border-radius: 10px;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .star-player h3 {
+      margin: 0.5rem 0;
+      color: #f2f2f2;
+    }
+.news {
+  padding: 50px 20px;
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+.news h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+.news-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.news-card {
+  background: #2a2a2a;
+  padding: 15px;
+  border-radius: 10px;
+  width: 280px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.news-card:hover {
+  transform: scale(1.05);
+}
+
+.news-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+  </style>
+</head>
+<body>
+  <div class="welcome-banner">
+    <h2>⚽ Welcome to RedGoal FC — Let's Kick the Limits! ⚽</h2>
+  </div>
+  <header>
+    <h1>RedGoal FC</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="team.html">Team</a>
+      <a href="fixture.html">Fixtures</a>
+      <a href="news.html">News</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="carousel">
+      <img src="images/hero.jpg" alt="1">
+      <img src="images/hero2.jpg" alt="2">
+      <img src="images/hero3.jpg" alt="3">
+      <img src="images/hero4.jpg" alt="4">
+      <img src="images/hero5.jpg" alt="5">
+      <!-- clones for infinite loop -->
+      <img src="images/hero.jpg" alt="1">
+      <img src="images/hero2.jpg" alt="2">
+      <img src="images/hero3.jpg" alt="3">
+      <img src="images/hero4.jpg" alt="4">
+      <img src="images/hero5.jpg" alt="5">
+    </div>
+    <div class="hero-text">
+      <h1>Together We Rise, Together We Score</h1>
+      <p>Join the legacy. Witness passion, power, and pride in every match.</p>
+      <form id="newsletter">
+        <input type="email" placeholder="Enter your email" required />
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <h2 class="section-title">Our Stars</h2>
+  <section class="stars">
+    <div class="star-player">
+      <img src="images/player1.jpeg" alt="Star 1">
+      <h3>Ahmed Khan</h3>
+      <p>Top Scorer</p>
+    </div>
+    <div class="star-player">
+      <img src="images/player2.jpeg" alt="Star 2">
+      <h3>Ali Raza</h3>
+      <p>Playmaker</p>
+    </div>
+    <div class="star-player">
+      <img src="images/player3.jpeg" alt="Star 3">
+      <h3>Bilal Asif</h3>
+      <p>Goalkeeper</p>
+    </div>
+  </section>
+<!-- News Highlights -->
+<section class="news">
+  <h2>Latest News</h2>
+  <div class="news-cards">
+    <div class="news-card">
+      <img src="images/news1.jpeg" alt="News">
+      <h4>RedGoal beats Rivals in Last Minute Thriller</h4>
+    </div>
+    <div class="news-card">
+      <img src="images/news2.jpeg" alt="News">
+      <h4>Young Star Shines in Academy Showcase</h4>
+    </div>
+    <div class="news-card">
+      <img src="images/news3.jpeg" alt="News">
+      <h4>New Jersey Launches This Weekend</h4>
+    </div>
+  </div>
+</section>
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-left">
+      <h3>RedGoal FC</h3>
+      <p>&copy; 2025 RedGoal FC. All rights reserved.</p>
+    </div>
+    <div class="footer-right">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+    </div>
+  </div>
+  <div class="footer-bottom">Developed by Umme Hani ❤️</div>
+</footer>
+  <script>
+    // Newsletter form
+    document.getElementById("newsletter").addEventListener("submit", function (e) {
+      e.preventDefault();
+      alert("Thank you for subscribing to RedGoal FC!");
+      this.reset();
+    });
+  </script>
+</body>
+</html>

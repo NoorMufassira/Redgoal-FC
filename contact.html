@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RedGoal FC - Contact</title>
+  <link rel="stylesheet" href="footer.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('images/stadium.jpeg') no-repeat center center/cover;
+      color: #fff;
+    }
+
+    header {
+      background: rgba(0, 0, 0, 0.85);
+      padding: 1em 2em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.8em;
+      font-weight: bold;
+      color: #f54242;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5em;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .btn {
+      background: #f54242;
+      color: white;
+      border: none;
+      padding: 0.5em 1em;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .btn:hover {
+      background: #d91d1d;
+    }
+    .hero-banner {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0; /* ensure no spacing */
+}
+
+.hero-text {
+  color: #fff;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.4); /* semi-transparent overlay */
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  backdrop-filter: blur(4px);
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.hero-text p {
+  font-size: 1.25rem;
+}
+
+    .contact-section {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 3em 2em;
+      max-width: 700px;
+      margin: 4em auto;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    }
+
+    .contact-section h1 {
+      text-align: center;
+      color: #f54242;
+      margin-bottom: 1em;
+    }
+
+    .contact-section p {
+      text-align: center;
+      font-size: 1.1em;
+      color: #ccc;
+      margin-bottom: 2em;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+    }
+
+    input, textarea {
+      padding: 0.9em;
+      border: none;
+      border-radius: 6px;
+      font-size: 1em;
+      background: #fff;
+      color: #111;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    form button {
+      background: #f54242;
+      color: white;
+      border: none;
+      padding: 0.9em;
+      font-size: 1em;
+      cursor: pointer;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+    form button:hover {
+      background: #c61616;
+    }
+
+    .success-message {
+      display: none;
+      text-align: center;
+      margin-top: 1em;
+      color: #0f0;
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      nav ul {
+        flex-direction: column;
+        gap: 0.5em;
+      }
+
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .contact-section {
+        margin: 2em 1em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">RedGoal FC</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="fixtures.html">Fixtures</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="btn">Join Us</button>
+  </header>
+   <section class="hero-banner">
+  <div class="hero-text">
+    <h1>Contact _ RedGoal FC</h1>
+    <p>Stay Connected with your champoins</p>
+  </div>
+</section>
+
+  <section class="contact-section">
+    <h1>Get In Touch</h1>
+    <p>Whether you're a fan, a player, or a partner — we’d love to hear from you.</p>
+
+    <form id="contact-form">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+
+    <div class="success-message" id="success-message">
+      Message sent! We'll get back to you shortly.
+    </div>
+  </section>
+  <footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-left">
+      <h3>RedGoal FC</h3>
+      <p>&copy; 2025 RedGoal FC. All rights reserved.</p>
+    </div>
+    <div class="footer-right">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+    </div>
+  </div>
+  <div class="footer-bottom">Developed by Umme Hani ❤️</div>
+</footer>
+  <script>
+    const form = document.getElementById('contact-form');
+    const successMsg = document.getElementById('success-message');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      successMsg.style.display = 'block';
+      form.reset();
+      setTimeout(() => {
+        successMsg.style.display = 'none';
+      }, 4000);
+    });
+  </script>
+</body>
+</html>
