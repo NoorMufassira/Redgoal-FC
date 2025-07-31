@@ -4,36 +4,51 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>RedGoal FC - Contact</title>
-  <link rel="stylesheet" href="footer.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       font-family: 'Segoe UI', sans-serif;
       background: url('images/stadium.jpeg') no-repeat center center/cover;
       color: #fff;
     }
 
     header {
-      background: rgba(0, 0, 0, 0.85);
-      padding: 1em 2em;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      background: rgba(0, 0, 0, 0.85);
+      padding: 1rem;
+      position: relative;
+      z-index: 1000;
     }
 
     .logo {
-      font-size: 1.8em;
+      font-size: 1.5rem;
       font-weight: bold;
       color: #f54242;
+    }
+
+    .menu-toggle {
+      font-size: 1.8rem;
+      color: white;
+      cursor: pointer;
+      display: none;
+    }
+
+    nav {
+      display: flex;
     }
 
     nav ul {
       list-style: none;
       display: flex;
       gap: 1.5em;
-      margin: 0;
-      padding: 0;
     }
 
     nav a {
@@ -46,49 +61,30 @@
       text-decoration: underline;
     }
 
-    .btn {
-      background: #f54242;
-      color: white;
-      border: none;
-      padding: 0.5em 1em;
-      font-weight: bold;
-      cursor: pointer;
-      border-radius: 4px;
-    }
-
-    .btn:hover {
-      background: #d91d1d;
-    }
     .hero-banner {
-  position: relative;
-  width: 100%;
-  height: 60vh;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 0; /* ensure no spacing */
-}
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(2px);
+      text-align: center;
+    }
 
-.hero-text {
-  color: #fff;
-  text-align: center;
-  background-color: rgba(0, 0, 0, 0.4); /* semi-transparent overlay */
-  padding: 1.5rem 2rem;
-  border-radius: 12px;
-  backdrop-filter: blur(4px);
-}
+    .hero-text {
+      background: rgba(0, 0, 0, 0.4);
+      padding: 2rem;
+      border-radius: 12px;
+    }
 
-.hero-text h1 {
-  font-size: 3rem;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-}
+    .hero-text h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
 
-.hero-text p {
-  font-size: 1.25rem;
-}
+    .hero-text p {
+      font-size: 1.1rem;
+    }
 
     .contact-section {
       background: rgba(0, 0, 0, 0.7);
@@ -155,44 +151,127 @@
       font-weight: bold;
     }
 
-    @media (max-width: 600px) {
-      nav ul {
+    footer {
+      background: rgba(0, 0, 0, 0.85);
+      padding: 1rem;
+      color: #aaa;
+      text-align: center;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 900px;
+      margin: 0 auto;
+      gap: 1rem;
+    }
+
+    .footer-left h3 {
+      color: #f54242;
+    }
+
+    .footer-right a {
+      color: white;
+      margin-left: 1rem;
+      font-size: 1.2rem;
+    }
+
+    .footer-bottom {
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      nav {
+        position: fixed;
+        top: 0;
+        right: -250px;
+        height: 100%;
+        width: 200px;
+        background: #111;
         flex-direction: column;
-        gap: 0.5em;
+        padding: 2rem 1rem;
+        gap: 1rem;
+        transition: right 0.3s ease-in-out;
+        z-index: 999;
       }
 
-      header {
+      nav.active {
+        right: 0;
+      }
+
+      nav ul {
         flex-direction: column;
-        align-items: flex-start;
+        gap: 1rem;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .hero-banner {
+        height: auto;
+        padding: 3rem 1rem;
+      }
+
+      .hero-text h1 {
+        font-size: 1.8rem;
+      }
+
+      .hero-text p {
+        font-size: 1rem;
       }
 
       .contact-section {
         margin: 2em 1em;
       }
+
+      .footer-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-right a {
+        margin: 0 0.5rem;
+      }
+      .close-btn {
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  align-self: flex-end;
+}
+
     }
   </style>
 </head>
 <body>
+
   <header>
     <div class="logo">RedGoal FC</div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="team.html">Team</a></li>
-        <li><a href="fixtures.html">Fixtures</a></li>
-        <li><a href="news.html">News</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-    <button class="btn">Join Us</button>
+    <div class="menu-toggle" onclick="toggleNav()">☰</div>
+   <nav id="navMenu">
+  <div class="close-btn" onclick="toggleNav()">&times;</div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="team.html">Team</a></li>
+    <li><a href="fixtures.html">Fixtures</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
   </header>
-   <section class="hero-banner">
-  <div class="hero-text">
-    <h1>Contact _ RedGoal FC</h1>
-    <p>Stay Connected with your champoins</p>
-  </div>
-</section>
+
+  <section class="hero-banner">
+    <div class="hero-text">
+      <h1>Contact _ RedGoal FC</h1>
+      <p>Stay Connected with your champions</p>
+    </div>
+  </section>
 
   <section class="contact-section">
     <h1>Get In Touch</h1>
@@ -209,24 +288,27 @@
       Message sent! We'll get back to you shortly.
     </div>
   </section>
+
   <footer class="site-footer">
-  <div class="footer-container">
-    <div class="footer-left">
-      <h3>RedGoal FC</h3>
-      <p>&copy; 2025 RedGoal FC. All rights reserved.</p>
+    <div class="footer-container">
+      <div class="footer-left">
+        <h3>RedGoal FC</h3>
+        <p>&copy; 2025 RedGoal FC. All rights reserved.</p>
+      </div>
+      <div class="footer-right">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
     </div>
-    <div class="footer-right">
-      <a href="#"><i class="fab fa-facebook-f"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-youtube"></i></a>
-    </div>
-  </div>
-  <div class="footer-bottom">Developed by Umme Hani ❤️</div>
-</footer>
+    <div class="footer-bottom">Developed by Umme Hani ❤️</div>
+  </footer>
+
   <script>
     const form = document.getElementById('contact-form');
     const successMsg = document.getElementById('success-message');
+    const nav = document.getElementById('navMenu');
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();
@@ -236,6 +318,11 @@
         successMsg.style.display = 'none';
       }, 4000);
     });
+
+    function toggleNav() {
+      nav.classList.toggle('active');
+    }
   </script>
+
 </body>
 </html>
